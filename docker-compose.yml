@@ -10,8 +10,8 @@ services:
         condition: on-failure
     environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup
-      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUXDB_USERNAME}
-      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=Admin@12345678
       - DOCKER_INFLUXDB_INIT_ORG=homelab
       - DOCKER_INFLUXDB_INIT_BUCKET=homelab
     ports:
@@ -31,8 +31,8 @@ services:
         condition: on-failure
     environment:
       - GF_INSTALL_PLUGINS=grafana-clock-panel, grafana-simple-json-datasource
-      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_USERNAME}
-      - GF_SECURITY_ADMIN_USER=${GRAFANA_PASSWORD}
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_USER=admin
     ports:
       - 3000:3000
     user: '1000:1000'
