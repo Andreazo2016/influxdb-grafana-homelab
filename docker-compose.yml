@@ -16,6 +16,7 @@ services:
       - DOCKER_INFLUXDB_INIT_BUCKET=homelab
     ports:
       - 8086:8086
+    user: '1000:1000'
     networks:
       - homelab
     volumes:
